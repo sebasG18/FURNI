@@ -5,62 +5,67 @@
     <div class="intro-excerpt">
         <h1>About Us</h1>
         <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
-        <p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
+        <p><a href="{%url 'shop'%}" class="btn btn-secondary me-2">Shop Now</a></p>
     </div>
 </div>
 {% endblock  %}
 {% block content %}
 {% load static %}
 <!-- Start Why Choose Us Section -->
+{%for content in listContents%}
 <div class="why-choose-section">
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-lg-6">
-                <h2 class="section-title">Why Choose Us</h2>
-                <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
+                <h2 class="section-title">{{content.title}}</h2>
+                <p>{{content.description}}</p>
     
                 <div class="row my-5">
                     <div class="col-6 col-md-6">
                         <div class="feature">
                             <div class="icon">
-                                <img src="{%static 'core/images/truck.svg'%}" alt="Image" class="imf-fluid">
+                                <img src="{{content.image1.url}}" alt="Image" class="imf-fluid" style="max-width: 100px; height: auto;">
                             </div>
                             <h3>Fast &amp; Free Shipping</h3>
-                            <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
+                            <p>{{content.Seconddes1}}</p>
                         </div>
                     </div>
-    
+
+
                     <div class="col-6 col-md-6">
                         <div class="feature">
                             <div class="icon">
-                                <img src="{%static 'core/images/bag.svg'%}" alt="Image" class="imf-fluid">
+                                <img src="{{content.image2.url}}" alt="Image" class="imf-fluid" style="max-width: 100px; height: auto;">
                             </div>
-                            <h3>Easy to Shop</h3>
-                            <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
+                            <h3>Fast &amp; Free Shipping</h3>
+                            <p>{{content.Seconddes2}}</p>
                         </div>
                     </div>
-    
+
+
                     <div class="col-6 col-md-6">
                         <div class="feature">
                             <div class="icon">
-                                <img src="{%static 'core/images/support.svg'%}" alt="Image" class="imf-fluid">
+                                <img src="{{content.image3.url}}" alt="Image" class="imf-fluid" style="max-width: 100px; height: auto;">
                             </div>
-                            <h3>24/7 Support</h3>
-                            <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
+                            <h3>Fast &amp; Free Shipping</h3>
+                            <p>{{content.Seconddes3}}</p>
                         </div>
                     </div>
-    
+
+
+              
                     <div class="col-6 col-md-6">
                         <div class="feature">
                             <div class="icon">
-                                <img src="{%static 'core/images/return.svg'%}" alt="Image" class="imf-fluid">
+                                <img src="{{content.image4.url}}" alt="Image" class="imf-fluid" style="max-width: 100px; height: auto;">
                             </div>
-                            <h3>Hassle Free Returns</h3>
-                            <p>Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate.</p>
+                            <h3>Fast &amp; Free Shipping</h3>
+                            <p>{{content.Seconddes4}}</p>
                         </div>
                     </div>
-    
                 </div>
+
             </div>
     
             <div class="col-lg-5">
@@ -72,6 +77,7 @@
         </div>
     </div>
     </div>
+    {%endfor%}
     <!-- End Why Choose Us Section -->
 
 <!-- Start Team Section -->
